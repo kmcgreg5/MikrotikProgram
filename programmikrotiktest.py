@@ -41,13 +41,13 @@ while(True):
         print('Panel Resetting...')
         while exceptionVar: #connects to ssh
             try:
-                disablePrint()
+                #disablePrint()
                 ssh = sshftpconnection.connectSSH('192.168.88.1', '')
-                enablePrint()
+                #enablePrint()
                 print('SSH Connected')
                 exceptionVar = False
-            except paramiko.SSHException:
-                enablePrint()
+            except Exception:
+                #enablePrint()
                 print('SSH Failed, Retrying...')
                 time.sleep(2)
                 
