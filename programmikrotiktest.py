@@ -10,7 +10,8 @@ def disablePrint(): #disables print function
     
 def enablePrint(): #enables print function
     sys.stdout = sys.__stdout__
-    
+print('Made by Kai McGregor')
+print('Tested by David Johnson')
 while(True):
     time.sleep(5)
     ipMACList = panelquery.getPanelList() #gets arp table
