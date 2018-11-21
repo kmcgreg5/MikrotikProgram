@@ -12,7 +12,7 @@ def enablePrint(): #enables print function
     sys.stdout = sys.__stdout__
 print('Made by Kai McGregor')
 print('Tested by David Johnson')
-x = 1
+countNum = 1
 while(True):
     time.sleep(5)
     ipMACList = panelquery.getPanelList() #gets arp table
@@ -22,8 +22,8 @@ while(True):
             panelFound = True
             
     if panelFound: #programs panel
-        print(x)
-        x += 1
+        print(countNum)
+        countNum += 1
         print('Panel Found')
         exceptionVar = True
         while exceptionVar: #uploads required files
