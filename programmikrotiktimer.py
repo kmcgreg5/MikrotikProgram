@@ -5,7 +5,7 @@ import time
 import threading
 
 def timeUnplug(panelNum):
-    time.sleep(210)
+    time.sleep(210) #210
     print('\n Unplug ' + str(panelNum) + '\n')
 
 print('Made by Kai McGregor')
@@ -69,7 +69,7 @@ while(True):
                     exceptionVar = True
                     
         print('Panel Done \n \n')
-        t = threading.Thread(name=str(countNum - 1), target=timeUnplug, args=str(countNum-1))
+        t = threading.Thread(name=str(countNum - 1), target=timeUnplug, args=(countNum-1,))
         t.start()
 
                 
