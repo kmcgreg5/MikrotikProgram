@@ -5,7 +5,7 @@ import time
 import threading
 
 def timeUnplug(panelNum):
-    time.sleep(180)
+    time.sleep(210)
     print('\n Unplug ' + str(panelNum) + '\n')
 
 print('Made by Kai McGregor')
