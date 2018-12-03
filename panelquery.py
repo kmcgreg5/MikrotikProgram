@@ -21,7 +21,6 @@ def getPanelList(): #gets ips and MAC addresses of ips in the 192.168.88.## or 1
         x += 1
 
     ipMACList = [['None' for x in range(2)] for y in range(numIPs)]
-    print(len(ipMACList))
     x = 0
     index = 0
     index2 = 0
@@ -72,7 +71,8 @@ def getPanelList(): #gets ips and MAC addresses of ips in the 192.168.88.## or 1
     while x < len(ipMACList):
         if ipMACList[x][0] == 'None':
             del ipMACList[x]
-        x += 1
+        else:
+            x += 1
     
     x = 0
     while x < len(ipMACList):
