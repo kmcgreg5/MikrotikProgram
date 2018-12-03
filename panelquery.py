@@ -1,6 +1,6 @@
 import subprocess
 import re
-import time
+
 def getPanelList(): #gets ips and MAC addresses of ips in the 192.168.88.## or 192.168.87.## format
     CREATE_NO_WINDOW = 0x08000000
     cmdCommand = subprocess.Popen(['arp','-a'], stdout = subprocess.PIPE, creationflags = CREATE_NO_WINDOW)
