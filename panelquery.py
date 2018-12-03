@@ -1,6 +1,6 @@
 import subprocess
 import re
-
+import time
 def getPanelList(): #gets ips and MAC addresses of ips in the 192.168.88.## or 192.168.87.## format
     CREATE_NO_WINDOW = 0x08000000
     cmdCommand = subprocess.Popen(['arp','-a'], stdout = subprocess.PIPE, creationflags = CREATE_NO_WINDOW)
@@ -9,7 +9,7 @@ def getPanelList(): #gets ips and MAC addresses of ips in the 192.168.88.## or 1
     numIPs = arpReturn.count('192.168.88')
     numIPs = numIPs + arpReturn.count('192.168.87')
     numInterfaces = arpReturn.count('Interface')
-    numIPs = numIPs - numInterfaces
+    numIPs = numIPs - numInterfaces + 1
     interfaceList = ['None' for x in range(numInterfaces)]
     x = 0
     index2 = 0
@@ -21,6 +21,7 @@ def getPanelList(): #gets ips and MAC addresses of ips in the 192.168.88.## or 1
         x += 1
 
     ipMACList = [['None' for x in range(2)] for y in range(numIPs)]
+    print(len(ipMACList))
     x = 0
     index = 0
     index2 = 0
@@ -75,12 +76,12 @@ def getPanelList(): #gets ips and MAC addresses of ips in the 192.168.88.## or 1
     
     x = 0
     while x < len(ipMACList):
-        ipMACList[x][1].replace('-',':')
+        ipMACList[x][1] = ipMACList[x][1].replace('-',':')
         x += 1
         
     return ipMACList
-
 '''
-ipMACList = getPanelList()
-print(ipMACList)
+while True:
+    ipMACList = getPanelList()
+    print(ipMACList)
 '''
